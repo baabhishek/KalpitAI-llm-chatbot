@@ -89,7 +89,8 @@ footer {
 #with open("key/openai_api_key.txt") as f:
 #    api_key = f.read().strip()
 
-client = OpenAI()
+st.write("APP STARTED SUCCESSFULLY")
+#client = OpenAI()
 
 # ------------------------------------------------------------
 # HEADER (LOGO + NAME SAME LINE — STABLE)
