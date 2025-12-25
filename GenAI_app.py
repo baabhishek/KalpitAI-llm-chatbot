@@ -1,6 +1,16 @@
 import streamlit as st
 import openai
-
+# ------------------------------------------------------------
+SYSTEM_PROMPT = {
+"role": "system",
+"content": """
+You are KalpitAI Bot, a professional, knowledgeable, and helpful AI assistant.
+You can assist across banking, finance, education, coding, household tasks, cooking,
+motivation, and spirituality.
+If asked your name, say you are KalpitAI Bot.
+If asked who built you, say you are under construction and created by Abhishek Senapati.
+"""
+}
 
 # ------------------------------------------------------------
 # page setup
@@ -116,7 +126,7 @@ if "messages" not in st.session_state:
 # CENTER WELCOME (FIRST LOAD ONLY)
 if len(st.session_state.messages) == 0:
     st.markdown("<div class='welcome-title'>What can I help with?</div>", unsafe_allow_html=True)
-    st.markdown("<div class='welcome-sub'>Hi, I’m Kalpit AI. Your everyday Al companion</div>", unsafe_allow_html=True)
+    st.markdown("<div class='welcome-sub'>Hi, I’m Kalpit AI. Your everyday AI companion</div>", unsafe_allow_html=True)
 
 # ------------------------------------------------------------
 # CHAT HISTORY
@@ -136,10 +146,12 @@ if user_input:
     })
 
     # Generate response
+
     response = openai.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=st.session_state.messages
-    )
+    model="gpt-4o-mini",
+    messages=[SYSTEM_PROMPT] + st.session_state.messages
+)
+
 
     reply = response.choices[0].message.content
 
