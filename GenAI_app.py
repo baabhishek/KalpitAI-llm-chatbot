@@ -1,5 +1,6 @@
 import streamlit as st
-from openai import OpenAI
+import openai
+
 
 # ------------------------------------------------------------
 # page setup
@@ -89,7 +90,7 @@ footer {
 #with open("key/openai_api_key.txt") as f:
 #    api_key = f.read().strip()
 
-client = OpenAI()
+#client = OpenAI()
 
 # ------------------------------------------------------------
 # HEADER (LOGO + NAME SAME LINE — STABLE)
@@ -135,7 +136,7 @@ if user_input:
     })
 
     # Generate response
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model="gpt-4o-mini",
         messages=st.session_state.messages
     )
