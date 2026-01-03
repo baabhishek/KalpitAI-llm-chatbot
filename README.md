@@ -4,8 +4,9 @@
 
 --
 # 🤖 KalpitAI – Streamlit AI Chatbot (https://kalpitai.streamlit.app/)
+Note: The `KalpitAI`  has been live for 7 days. However, I have intentionally configured a placeholder API key to prevent live text generation while maintaining the user interface for demonstration purpose only.
 
-KalpitAI is a ChatGPT-like AI chatbot built using **Streamlit** and **OpenAI**, designed with a clean UI and secure deployment practices. The app supports real-time conversations.
+`KalpitAI` is a ChatGPT-like AI chatbot built using **Streamlit** and **OpenAI**, designed with a clean UI and secure deployment practices. The app supports real-time conversations.
 
 ---
 
